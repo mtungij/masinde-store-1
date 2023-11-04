@@ -10,7 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | WITH a trailing slash:
 |
 |	http://example.com/
-|
 | WARNING: You MUST set this value!
 |
 | If it is not set, then CodeIgniter will try to guess the protocol and
@@ -23,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/masinde2/';
+$config['base_url'] = 'http://localhost/masinde-store/';
 
 /*
 |--------------------------------------------------------------------------
