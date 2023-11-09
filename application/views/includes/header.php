@@ -1,5 +1,14 @@
 <?php 
 
+$username = $this->session->userdata("username");
+$userId = $this->session->userdata("userId");
+$firstName = $this->session->userdata("firstName");
+$lastName = $this->session->userdata("lastName");
+$branchId = $this->session->userdata("branchId");
+$branchName = $this->session->userdata("branchName");
+$position =  $this->session->userdata("position");
+
+
 function format_price($price) {
     return number_format($price) . "/=";
 }
@@ -199,9 +208,10 @@ function format_date_ago_only($date) {
     <link rel="stylesheet" href="<?php echo base_url("assets/css/datatable.css") ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/select2.css") ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/styles.css") ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="<?php echo base_url("assets/js/jquery.js") ?>"></script>
     <style>
-      .dataTables_wrapper {
+        .dataTables_wrapper {
         color: #94a3b8 !important;
         background-color: #1f2937 !important;
         padding: 1.12rem 0;
@@ -281,8 +291,8 @@ function format_date_ago_only($date) {
             data-dropdown-toggle="notification-dropdown"
             class="p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
           >
-            <span class="sr-only">View notifications</span>
-            <!-- Bell icon -->
+            <!-- <span class="sr-only">View notifications</span>
+            Bell icon
             <svg
               aria-hidden="true"
               class="w-6 h-6"
@@ -293,9 +303,9 @@ function format_date_ago_only($date) {
               <path
                 d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
               ></path>
-            </svg>
+            </svg> -->
           </button>
-          <!-- Dropdown menu -->
+          <!-- Dropdown menu
           <div
             class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl"
             id="notification-dropdown"
@@ -560,15 +570,15 @@ function format_date_ago_only($date) {
                 View all
               </div>
             </a>
-          </div>
+          </div> -->
           <!-- Apps -->
           <button
             type="button"
             data-dropdown-toggle="apps-dropdown"
             class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
           >
-            <span class="sr-only">View notifications</span>
-            <!-- Icon -->
+            <!-- <span class="sr-only">View notifications</span>
+             Icon
             <svg
               class="w-6 h-6"
               fill="currentColor"
@@ -578,9 +588,9 @@ function format_date_ago_only($date) {
               <path
                 d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
               ></path>
-            </svg>
+            </svg> -->
           </button>
-          <!-- Dropdown menu -->
+          <!-- Dropdown menu
           <div
             class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
             id="apps-dropdown"
@@ -779,7 +789,7 @@ function format_date_ago_only($date) {
                 </div>
               </a>
             </div>
-          </div>
+          </div> -->
           <button
             type="button"
             class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -788,28 +798,27 @@ function format_date_ago_only($date) {
             data-dropdown-toggle="dropdown"
           >
             <span class="sr-only">Open user menu</span>
-            <img
-              class="w-8 h-8 rounded-full"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
-              alt="user photo"
-            />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 rounded-full">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+
           </button>
           <!-- Dropdown menu -->
           <div
-            class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+            class="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
             id="dropdown"
           >
             <div class="py-3 px-4">
               <span
                 class="block text-sm font-semibold text-gray-900 dark:text-white"
-                >Neil Sims</span
+                ><?= $username ?></span
               >
               <span
                 class="block text-sm text-gray-900 truncate dark:text-white"
-                >name@flowbite.com</span
+                ><?= $position ?></span
               >
             </div>
-            <ul
+            <!-- <ul
               class="py-1 text-gray-700 dark:text-gray-300"
               aria-labelledby="dropdown"
             >
@@ -827,8 +836,8 @@ function format_date_ago_only($date) {
                   >Account settings</a
                 >
               </li>
-            </ul>
-            <ul
+            </ul> -->
+            <!-- <ul
               class="py-1 text-gray-700 dark:text-gray-300"
               aria-labelledby="dropdown"
             >
@@ -904,14 +913,14 @@ function format_date_ago_only($date) {
                   </svg>
                 </a>
               </li>
-            </ul>
+            </ul> -->
             <ul
               class="py-1 text-gray-700 dark:text-gray-300"
               aria-labelledby="dropdown"
             >
               <li>
                 <a
-                  href="#"
+                  href="<?= site_url('login/logout') ?>"
                   class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                   >Sign out</a
                 >
